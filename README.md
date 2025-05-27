@@ -602,3 +602,36 @@ etaStudenti.entrySet(): Questo metodo restituisce una Set di oggetti Map.Entry<S
 for (Map.Entry<String, Integer> entry : etaStudenti.entrySet()): Il ciclo for-each itera su ogni Map.Entry nella Set restituita.
 entry.getKey(): All'interno del ciclo, puoi usare questo metodo per ottenere la chiave dell'elemento corrente.
 entry.getValue(): E questo metodo per ottenere il valore associato alla chiave corrente.
+
+## LE MAP<KEY,VALUE> ARRAY CHIAVE VALORE
+
+Map<String,String> prof = new HashMap<String,String>();
+prof.put("nome","Tommaso");
+prof.put("cognome","Muraca");
+prof.put("via","Via Roma");
+
+prof.get("via");
+prof.get("cognome");
+prof.get("nome");
+
+# FUNZIONE E METODI
+
+sono blocchi di codice riutilizabili che POSSONO restituire un determinato tipo di valore
+
+### es return String type
+
+String Saluta(String nome//parametro){
+String saluta = ciao + " sono " + nome "
+return saluta;
+}
+
+### es void function
+
+void sonoVoid(){
+sys.out.print("ciao sono void");
+}
+
+# Override di un metodo
+
+in Java possiamo creare più metodi con lo stesso nome a patto che si differenzino per tipo di dato restituito
+o numero parametri che servono per accedere al metodo
