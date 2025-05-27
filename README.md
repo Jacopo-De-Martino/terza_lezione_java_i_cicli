@@ -1,3 +1,151 @@
+# FUNZIONI STRING
+
+Metodi di String
+
+### .toCharArray()
+
+Scopo: Converte la stringa in un array di caratteri.
+Sintassi: char[] chars = myString.toCharArray();
+Restituisce: Un nuovo array char[] contenente i caratteri della stringa.
+
+### .split(String regex)
+
+Scopo: Divide la stringa in un array di sottostringhe usando un delimitatore (RegEx).
+Sintassi: String[] parts = myString.split(delimiterRegex);
+Restituisce: Un String[] contenente le sottostringhe. Le stringhe vuote finali sono ignorate.
+
+### .split(String regex, int limit)
+
+Scopo: Divide la stringa in un array di sottostringhe, con un limite al numero di parti.
+Sintassi: String[] parts = myString.split(delimiterRegex, limit);
+Restituisce: Un String[]. limit > 0 limita il numero di parti; limit < 0 include tutte le stringhe vuote.
+
+### String.join(CharSequence delimiter, CharSequence... elements)
+
+Scopo: Unisce una sequenza di stringhe (o CharSequence) in una singola stringa usando un delimitatore. (Metodo statico).
+Sintassi: String result = String.join(delimiter, str1, str2, ...);
+Restituisce: Una nuova stringa risultante dalla concatenazione.
+
+### String.join(CharSequence delimiter, Iterable<? extends CharSequence> elements)
+
+Scopo: Unisce gli elementi di un Iterable di stringhe (o CharSequence) in una singola stringa usando un delimitatore. (Metodo statico).
+Sintassi: String result = String.join(delimiter, listOfStrings);
+Restituisce: Una nuova stringa risultante dalla concatenazione.
+
+### .length()
+
+Scopo: Restituisce la lunghezza (numero di caratteri) della stringa.
+Sintassi: int len = myString.length();
+Restituisce: Un int rappresentante la lunghezza.
+
+### .charAt(int index)
+
+Scopo: Restituisce il carattere all'indice specificato.
+Sintassi: char c = myString.charAt(index);
+Restituisce: Il char alla posizione index. (Ricorda: il primo carattere è all'indice 0).
+
+### .contains(CharSequence s)
+
+Scopo: Verifica se la stringa contiene la sequenza di caratteri specificata.
+Sintassi: boolean hasSequence = myString.contains(otherString);
+Restituisce: true se la sequenza è presente, false altrimenti.
+
+### .startsWith(String prefix)
+
+Scopo: Verifica se la stringa inizia con il prefisso specificato.
+Sintassi: boolean starts = myString.startsWith(prefix);
+Restituisce: true se la stringa inizia con prefix, false altrimenti.
+
+### .endsWith(String suffix)
+
+Scopo: Verifica se la stringa termina con il suffisso specificato.
+Sintassi: boolean ends = myString.endsWith(suffix);
+Restituisce: true se la stringa termina con suffix, false altrimenti.
+
+### .equals(Object anObject)
+
+Scopo: Confronta se il contenuto di due stringhe è uguale (sensibile alle maiuscole/minuscole).
+Sintassi: boolean areEqual = myString.equals(anotherString);
+Restituisce: true se il contenuto è identico, false altrimenti.
+
+### .equalsIgnoreCase(String anotherString)
+
+Scopo: Confronta se il contenuto di due stringhe è uguale (ignorando maiuscole/minuscole).
+Sintassi: boolean areEqual = myString.equalsIgnoreCase(anotherString);
+Restituisce: true se il contenuto è identico ignorando il case, false altrimenti.
+
+### .indexOf(int ch) / .indexOf(String str)
+
+Scopo: Restituisce l'indice della prima occorrenza del carattere (ch) o della sottostringa (str) specificata.
+Sintassi: int index = myString.indexOf('c'); / int index = myString.indexOf("sub");
+Restituisce: L'indice della prima occorrenza, o -1 se non trovato.
+
+### .lastIndexOf(int ch) / .lastIndexOf(String str)
+
+Scopo: Restituisce l'indice dell'ultima occorrenza del carattere (ch) o della sottostringa (str) specificata.
+Sintassi: int index = myString.lastIndexOf('c'); / int index = myString.lastIndexOf("sub");
+Restituisce: L'indice dell'ultima occorrenza, o -1 se non trovato.
+
+### .substring(int beginIndex)
+
+Scopo: Estrae una sottostringa da un indice iniziale fino alla fine della stringa.
+Sintassi: String sub = myString.substring(beginIndex);
+Restituisce: Una nuova stringa contenente la sottostringa.
+
+### .substring(int beginIndex, int endIndex)
+
+Scopo: Estrae una sottostringa da un indice iniziale (incluso) a un indice finale (escluso).
+Sintassi: String sub = myString.substring(beginIndex, endIndex);
+Restituisce: Una nuova stringa contenente la sottostringa.
+
+### .toLowerCase()
+
+Scopo: Converte tutti i caratteri della stringa in minuscolo.
+Sintassi: String lower = myString.toLowerCase();
+Restituisce: Una nuova stringa in minuscolo.
+
+### .toUpperCase()
+
+Scopo: Converte tutti i caratteri della stringa in maiuscolo.
+Sintassi: String upper = myString.toUpperCase();
+Restituisce: Una nuova stringa in maiuscolo.
+
+### .trim()
+
+Scopo: Rimuove gli spazi bianchi (whitespace) all'inizio e alla fine della stringa.
+Sintassi: String trimmed = myString.trim();
+Restituisce: Una nuova stringa senza spazi bianchi iniziali/finali.
+
+### .replace(char oldChar, char newChar)
+
+Scopo: Sostituisce tutte le occorrenze di un carattere con un altro.
+Sintassi: String replaced = myString.replace('a', 'b');
+Restituisce: Una nuova stringa con le sostituzioni.
+
+### .replace(CharSequence target, CharSequence replacement)
+
+Scopo: Sostituisce tutte le occorrenze di una sequenza di caratteri con un'altra sequenza.
+Sintassi: String replaced = myString.replace("old", "new");
+Restituisce: Una nuova stringa con le sostituzioni.
+
+### .replaceAll(String regex, String replacement)
+
+Scopo: Sostituisce tutte le sottostringhe che corrispondono a una RegEx con una stringa di sostituzione.
+Sintassi: String replaced = myString.replaceAll("\\s+", "\_");
+Restituisce: Una nuova stringa con le sostituzioni basate su RegEx.
+
+### .replaceFirst(String regex, String replacement)
+
+Scopo: Sostituisce solo la prima sottostringa che corrisponde a una RegEx con una stringa di sostituzione.
+Sintassi: String replaced = myString.replaceFirst("a", "X");
+Restituisce: Una nuova stringa con la prima sostituzione basata su RegEx.
+
+### .matches(String regex)
+
+Scopo: Verifica se l'intera stringa corrisponde all'espressione regolare data.
+Sintassi: boolean isMatch = myString.matches("pattern");
+Restituisce: true se l'intera stringa corrisponde al pattern, false altrimenti.
+
 # I CICLI IN JAVA
 
 ### finche è true esegui il "corpo" del ciclo
@@ -422,20 +570,20 @@ Map<String, Integer> etaStudenti = new HashMap<>();
        ### }
        ###
 
-        <!-- System.out.println("\n--- Iterazione sulle sole chiavi ---");
+        System.out.println("\n--- Iterazione sulle sole chiavi ---");
         // Iterazione solo sulle chiavi usando keySet()
         // Poi recuperiamo il valore per ogni chiave (potrebbe essere meno efficiente)
         for (String nome : etaStudenti.keySet()) {
             Integer eta = etaStudenti.get(nome); // Recupera il valore usando la chiave
             System.out.println("Nome: " + nome + ", Età: " + eta);
-        } -->
+        }
 
-        <!-- System.out.println("\n--- Iterazione sui soli valori ---");
+        System.out.println("\n--- Iterazione sui soli valori ---");
         // Iterazione solo sui valori usando values()
         // Questo è utile se ti interessano solo i valori
         for (Integer eta : etaStudenti.values()) {
             System.out.println("Un'età presente: " + eta);
-        } -->
+        }
 
         // Rimozione di un elemento
         etaStudenti.remove("David");
