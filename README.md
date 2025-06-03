@@ -271,122 +271,7 @@ int[][] matrice = new int[5][5];
 
 ## Java collection framework
 
-### Iterable->{Set,List,Queue}
-
-.iterator() --> Restituisce un oggetto Iterator per scorrere gli elementi.
-.forEach(action) (Java 8+) --> Esegue un'azione specificata per ogni elemento (metodo default).
-.spliterator() (Java 8+) --> Crea uno Spliterator per l'iterazione parallela (metodo default).
-
-### Collection<E>
-
-.add(el) --> Aggiunge l'elemento el alla collezione. Restituisce true se la collezione è stata modificata.
-Nota: Per Set, aggiunge solo se l'elemento non è già presente.
-.remove(el) --> Rimuove una singola occorrenza dell'elemento el dalla collezione. Restituisce true se rimosso.
-.addAll(collection) --> Aggiunge tutti gli elementi della collection specificata a questa collezione.
-.removeAll(collection) --> Rimuove da questa collezione tutti gli elementi che sono anche nella collection specificata.
-.retainAll(collection) --> Rimuove da questa collezione tutti gli elementi non contenuti nella collection specificata (intersezione).
-.clear() --> Rimuove tutti gli elementi dalla collezione, rendendola vuota.
-.size() --> Restituisce il numero di elementi nella collezione.
-.isEmpty() --> Restituisce true se la collezione non contiene elementi.
-.contains(el) --> Restituisce true se la collezione contiene l'elemento el.
-.containsAll(collection) --> Restituisce true se la collezione contiene tutti gli elementi della collection specificata.
-.toArray() --> Converte la collezione in un array di Object.
-.toArray(T[] a) --> Converte la collezione in un array del tipo specificato.
-
-### List<E>
-
-.add(idx, el) --> Inserisce l'elemento el nella posizione idx specificata.
-.get(idx) --> Restituisce l'elemento nella posizione idx specificata.
-.set(idx, el) --> Sostituisce l'elemento nella posizione idx con l'elemento el specificato.
-.remove(idx) --> Rimuove l'elemento nella posizione idx specificata.
-.addAll(idx, collection) --> Inserisce tutti gli elementi della collection specificata a partire dalla posizione idx.
-.indexOf(el) --> Restituisce l'indice della prima occorrenza dell'elemento el, o -1 se non trovato.
-.lastIndexOf(el) --> Restituisce l'indice dell'ultima occorrenza dell'elemento el, o -1 se non trovato.
-.listIterator() --> Restituisce un ListIterator (permette di iterare avanti/indietro, aggiungere, modificare).
-.listIterator(idx) --> Restituisce un ListIterator che inizia dalla posizione idx.
-.subList(fromIdx, toIdx) --> Restituisce una "vista" (sotto-lista) della porzione specificata della lista.
-
-### Ok, ho capito! Userò lo stile di scrittura che hai mostrato, raggruppando i metodi per le interfacce e aggiungendo le note e i chiarimenti necessari.
-
-Iterable<E>
-L'interfaccia Iterable<E> è la radice per la capacità di scorrere gli elementi (usando il for-each loop).
-
-.iterator() --> Restituisce un oggetto Iterator per scorrere gli elementi.
-.forEach(action) (Java 8+) --> Esegue un'azione specificata per ogni elemento (metodo default).
-.spliterator() (Java 8+) --> Crea uno Spliterator per l'iterazione parallela (metodo default).
-Collection<E>
-L'interfaccia Collection<E> estende Iterable<E> e definisce le operazioni fondamentali comuni a quasi tutte le collezioni.
-
-.add(el) --> Aggiunge l'elemento el alla collezione. Restituisce true se la collezione è stata modificata.
-Nota: Per Set, aggiunge solo se l'elemento non è già presente.
-.remove(el) --> Rimuove una singola occorrenza dell'elemento el dalla collezione. Restituisce true se rimosso.
-.addAll(collection) --> Aggiunge tutti gli elementi della collection specificata a questa collezione.
-.removeAll(collection) --> Rimuove da questa collezione tutti gli elementi che sono anche nella collection specificata.
-.retainAll(collection) --> Rimuove da questa collezione tutti gli elementi non contenuti nella collection specificata (intersezione).
-.clear() --> Rimuove tutti gli elementi dalla collezione, rendendola vuota.
-.size() --> Restituisce il numero di elementi nella collezione.
-.isEmpty() --> Restituisce true se la collezione non contiene elementi.
-.contains(el) --> Restituisce true se la collezione contiene l'elemento el.
-.containsAll(collection) --> Restituisce true se la collezione contiene tutti gli elementi della collection specificata.
-.toArray() --> Converte la collezione in un array di Object.
-.toArray(T[] a) --> Converte la collezione in un array del tipo specificato.
-List<E>
-L'interfaccia List<E> estende Collection<E> e rappresenta una sequenza ordinata di elementi. Permette duplicati e accesso tramite indice.
-
-Metodi ereditati da Collection (e Iterable) +:
-.add(idx, el) --> Inserisce l'elemento el nella posizione idx specificata.
-.get(idx) --> Restituisce l'elemento nella posizione idx specificata.
-.set(idx, el) --> Sostituisce l'elemento nella posizione idx con l'elemento el specificato.
-.remove(idx) --> Rimuove l'elemento nella posizione idx specificata.
-.addAll(idx, collection) --> Inserisce tutti gli elementi della collection specificata a partire dalla posizione idx.
-.indexOf(el) --> Restituisce l'indice della prima occorrenza dell'elemento el, o -1 se non trovato.
-.lastIndexOf(el) --> Restituisce l'indice dell'ultima occorrenza dell'elemento el, o -1 se non trovato.
-.listIterator() --> Restituisce un ListIterator (permette di iterare avanti/indietro, aggiungere, modificare).
-.listIterator(idx) --> Restituisce un ListIterator che inizia dalla posizione idx.
-.subList(fromIdx, toIdx) --> Restituisce una "vista" (sotto-lista) della porzione specificata della lista.
-
-### Ok, ho capito! Userò lo stile di scrittura che hai mostrato, raggruppando i metodi per le interfacce e aggiungendo le note e i chiarimenti necessari.
-
-Iterable<E>
-L'interfaccia Iterable<E> è la radice per la capacità di scorrere gli elementi (usando il for-each loop).
-
-.iterator() --> Restituisce un oggetto Iterator per scorrere gli elementi.
-.forEach(action) (Java 8+) --> Esegue un'azione specificata per ogni elemento (metodo default).
-.spliterator() (Java 8+) --> Crea uno Spliterator per l'iterazione parallela (metodo default).
-Collection<E>
-L'interfaccia Collection<E> estende Iterable<E> e definisce le operazioni fondamentali comuni a quasi tutte le collezioni.
-
-.add(el) --> Aggiunge l'elemento el alla collezione. Restituisce true se la collezione è stata modificata.
-Nota: Per Set, aggiunge solo se l'elemento non è già presente.
-.remove(el) --> Rimuove una singola occorrenza dell'elemento el dalla collezione. Restituisce true se rimosso.
-.addAll(collection) --> Aggiunge tutti gli elementi della collection specificata a questa collezione.
-.removeAll(collection) --> Rimuove da questa collezione tutti gli elementi che sono anche nella collection specificata.
-.retainAll(collection) --> Rimuove da questa collezione tutti gli elementi non contenuti nella collection specificata (intersezione).
-.clear() --> Rimuove tutti gli elementi dalla collezione, rendendola vuota.
-.size() --> Restituisce il numero di elementi nella collezione.
-.isEmpty() --> Restituisce true se la collezione non contiene elementi.
-.contains(el) --> Restituisce true se la collezione contiene l'elemento el.
-.containsAll(collection) --> Restituisce true se la collezione contiene tutti gli elementi della collection specificata.
-.toArray() --> Converte la collezione in un array di Object.
-.toArray(T[] a) --> Converte la collezione in un array del tipo specificato.
-List<E>
-L'interfaccia List<E> estende Collection<E> e rappresenta una sequenza ordinata di elementi. Permette duplicati e accesso tramite indice.
-
-Metodi ereditati da Collection (e Iterable) +:
-.add(idx, el) --> Inserisce l'elemento el nella posizione idx specificata.
-.get(idx) --> Restituisce l'elemento nella posizione idx specificata.
-.set(idx, el) --> Sostituisce l'elemento nella posizione idx con l'elemento el specificato.
-.remove(idx) --> Rimuove l'elemento nella posizione idx specificata.
-.addAll(idx, collection) --> Inserisce tutti gli elementi della collection specificata a partire dalla posizione idx.
-.indexOf(el) --> Restituisce l'indice della prima occorrenza dell'elemento el, o -1 se non trovato.
-.lastIndexOf(el) --> Restituisce l'indice dell'ultima occorrenza dell'elemento el, o -1 se non trovato.
-.listIterator() --> Restituisce un ListIterator (permette di iterare avanti/indietro, aggiungere, modificare).
-.listIterator(idx) --> Restituisce un ListIterator che inizia dalla posizione idx.
-.subList(fromIdx, toIdx) --> Restituisce una "vista" (sotto-lista) della porzione specificata della lista.
-
-### Ok, ho capito! Userò lo stile di scrittura che hai mostrato, raggruppando i metodi per le interfacce e aggiungendo le note e i chiarimenti necessari.
-
-### Iterable<E>
+## Iterable<E>
 
 L'interfaccia Iterable<E> è la radice per la capacità di scorrere gli elementi (usando il for-each loop).
 
@@ -394,7 +279,7 @@ L'interfaccia Iterable<E> è la radice per la capacità di scorrere gli elementi
 .forEach(action) (Java 8+) --> Esegue un'azione specificata per ogni elemento (metodo default).
 .spliterator() (Java 8+) --> Crea uno Spliterator per l'iterazione parallela (metodo default).
 
-### Collection<E>
+## Collection<E>
 
 L'interfaccia Collection<E> estende Iterable<E> e definisce le operazioni fondamentali comuni a quasi tutte le collezioni.
 
@@ -412,7 +297,7 @@ Nota: Per Set, aggiunge solo se l'elemento non è già presente.
 .toArray() --> Converte la collezione in un array di Object.
 .toArray(T[] a) --> Converte la collezione in un array del tipo specificato.
 
-### List<E>
+## List<E>
 
 L'interfaccia List<E> estende Collection<E> e rappresenta una sequenza ordinata di elementi. Permette duplicati e accesso tramite indice.
 
@@ -428,13 +313,13 @@ Metodi ereditati da Collection (e Iterable) +:
 .listIterator(idx) --> Restituisce un ListIterator che inizia dalla posizione idx.
 .subList(fromIdx, toIdx) --> Restituisce una "vista" (sotto-lista) della porzione specificata della lista.
 
-### Set<E>
+## Set<E>
 
 L'interfaccia Set<E> estende Collection<E> e rappresenta una collezione che non contiene elementi duplicati. L'ordine non è generalmente garantito.
 
 .add(el): Restituisce true solo se l'elemento el è stato effettivamente aggiunto (cioè, non era già presente nel Set).
 
-### Queue<E>
+## Queue<E>
 
 L'interfaccia Queue<E> estende Collection<E> e rappresenta una collezione progettata per contenere elementi prima dell'elaborazione (spesso FIFO).
 
@@ -446,13 +331,13 @@ Metodi di Esame (della testa senza rimozione):
 .peek() --> Recupera, ma non rimuove, la testa della coda. Restituisce null se la coda è vuota. (Preferito a element()).
 .element() --> Recupera, ma non rimuove, la testa della coda. Lancia NoSuchElementException se la coda è vuota.
 
-## Classi concrete
+# Classi concrete
 
-### List->{ArrayList,LikedList,Vector,Stack}
+## List->{ArrayList,LikedList,Vector,Stack}
 
-### Set->{HashSet,LikedHashSet,TreeSet}
+## Set->{HashSet,LikedHashSet,TreeSet}
 
-## ArrayList
+# ArrayList
 
 Descrizione: Implementazione basata su un array dinamico (ridimensionabile). Ottima per l'accesso casuale (random access) agli elementi tramite indice (get(idx)), che è un'operazione molto veloce (O(1)). Le aggiunte/rimozioni alla fine della lista sono veloci (O(1) ammortizzato). Le aggiunte/rimozioni al centro della lista sono lente (O(n)) perché richiedono lo spostamento di molti elementi.
 Thread-Safety: Non thread-safe.
